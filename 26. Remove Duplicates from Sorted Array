@@ -1,10 +1,10 @@
 class Solution:
     def removeDuplicates(self, nums: List[int]) -> int:
         if nums is None:
-            return 0
-        i = 0
-        for j in range(0, len(nums)):
-            if nums[j]!=nums[i]:
-                i=i+1
-                nums[i]=nums[j]
+            return 0                    #return 0 if empty list
+        i = 0                           #unique number count
+        for j in range(0, len(nums)):   #iterating the array, find for next unique number
+            if nums[j]!=nums[i]:        #if found unique number
+                i=i+1                   #where should be the next unique number               
+                nums[i]=nums[j]         #move to the next available place where unique number is not available
         return i+1
